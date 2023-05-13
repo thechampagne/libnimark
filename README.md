@@ -27,12 +27,14 @@ make
 
 ```c
 #include <stdio.h>
+#include <stdlib.h>
 #include "nimark.h"
 int main(void)
 {
   nimark_init(); // initialize garbage collector memory, types and stack
   char* md = nimark_markdown("> Lorem ipsum dolor\nsit amet.\n> - Qui *quodsi iracundia*\n> - aliquando id");
   printf("%s", md);
+  free(md);
   return 0;
 }
 ```
